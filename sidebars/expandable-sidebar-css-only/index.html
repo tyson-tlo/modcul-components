@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expandable Sidebar Using Only CSS || Tyson London</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        .container{
+            min-height: 100%;
+        }
+
+        .sidebar{
+            position: fixed;
+            top: 0px;
+            left: -150px;
+            height: 100%;
+            background-color: lightgray;
+            width: 200px;
+            box-shadow: 0 0 10px gray;
+            transition: left .5s;
+        }
+
+        .sidebar img{
+            display: block;            
+            margin: 40px 0;
+            border-radius: 75px;
+            box-shadow: 0 0 10px white;
+            transition: margin 1s;
+        }
+
+        .menu-toggle:checked ~ .sidebar > img{
+            margin: 40px auto;
+        }
+
+        .sidebar .title{
+            text-align: center;
+        }
+
+        ul{
+            list-style: none;
+            width: 100%;
+            margin-left: -40px;
+        }
+
+        li{            
+            font-size: 1.25rem;
+            padding: 1rem 0 1rem 2rem;
+            cursor: pointer;
+            transition: background-color .5s;
+        }
+        li:hover{
+            background-color: darkgray;
+        }
+
+        /* move the icons to the left of there positions. */
+        .sidebar-icons{
+            position: relative;
+            left: 130px;
+            transition: left 1s;            
+        }
+
+        .menu-toggle:checked ~ .sidebar .sidebar-icons{
+            left: 0;
+        }
+
+        .menu-toggle{
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            z-index: 1;
+            transition: left .5s;
+            display: none;
+        }
+
+        label{
+            
+            position: fixed;
+            background-image: url('images/menu (1).png');
+            z-index: 1;
+            width: 40px;
+            height: 40px;
+            left: 10px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: left .5s, background-image .5s;
+        }
+
+        .menu-toggle:checked + label{
+            left: 160px;
+            background-image: url('images/close.png');
+        }        
+
+        .menu-toggle:checked ~ .sidebar{
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <input name="menu" type="checkbox" class="menu-toggle" id="menu">
+        <label for="menu"></label>
+
+        <div class="sidebar">
+            <img src="https://via.placeholder.com/150/fff" alt="">
+
+            <h3 class="title">
+                John Smith
+            </h3>
+            <ul>
+                <li><i class="fas fa-tachometer-alt sidebar-icons"></i> <span>Dashboard</span> </li>
+                <li><i class="fas fa-users sidebar-icons"></i>  <span>Users</span> </li>
+                <li><i class="far fa-handshake sidebar-icons"></i> <span>Customers</span> </li>
+                <li><i class="fas fa-address-book sidebar-icons"></i> <span>Contacts</span> </li>
+                <li><i class="fas fa-calculator sidebar-icons"></i> <span>Estimates</span> </li>
+                <li><i class="far fa-calendar-alt sidebar-icons"></i> <span>Calendar</span> </li>
+            </ul>
+        </div>
+        
+        <div class="content">
+    
+        </div>
+    </div>
+    
+</body>
+</html>
