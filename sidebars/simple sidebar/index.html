@@ -48,8 +48,9 @@
 
         .content{
             display: block;
-            width: 80%;
+            width: calc(80% - 40px);
             margin-left: 18%;
+            padding: 20px;
             /* float: right; */
         }
         ul{
@@ -69,6 +70,24 @@
         li:hover{
             background-color: darkgray;
         }
+
+        
+
+        .card{
+            width: 80%;
+            min-height: 200px;
+            box-shadow: 0 0 10px gray;
+            padding: 5px;
+            margin-left: 10%;
+        }
+
+        .card>h2{
+            text-align: center;
+        }
+
+        .m-top-2{
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -86,11 +105,19 @@
                 <li><i class="far fa-calendar-alt"></i> Calendar</li>
             </ul>
             <hr>
+            <ul>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
         </div>
         <div class="content">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptate natus facere neque nostrum ullam! Dolor, adipisci laborum? Provident numquam expedita repudiandae quo iure et sint autem pariatur ducimus perspiciatis.</p>
-            <p>Inventore totam assumenda deleniti facere, reprehenderit eum nesciunt temporibus iure in quod tempora. Inventore, magni. Repudiandae ullam ex voluptatibus magnam commodi aliquam quisquam ipsum nobis, distinctio dicta labore alias vero.</p>
-            <p>Similique quos animi quo voluptatibus ipsum. Neque aspernatur, commodi eum at magni saepe ipsa perferendis nobis quaerat dicta eius maiores cupiditate odit temporibus quam laborum qui porro libero exercitationem eaque!</p>
+            <div class="card">
+                <h2>This is a title</h2>
+                
+            </div>
+            
+            <div class="card m-top-2" style="height: 800px;">
+                <h2>Second Title</h2>
+            </div>
         </div>
     </div>
 </body>
